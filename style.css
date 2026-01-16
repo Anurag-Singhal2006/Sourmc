@@ -263,4 +263,30 @@ footer {
     }
     .nav-links.active { left: 0; }
     .hero-content h1 { font-size: 2.5rem; }
+
+}
+/* --- STORE PERKS LIST OPTIMIZATION --- */
+/* This handles the long lists of commands from your rank file */
+
+.perks {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+    max-height: 250px; /* Limits height so long lists don't break the design  */
+    overflow-y: auto;  /* Adds a scrollbar if the list of commands is too long  */
+    padding-right: 10px;
+}
+
+/* Custom Scrollbar to match the Ender Theme */
+.perks::-webkit-scrollbar {
+    width: 5px;
+}
+
+.perks::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.perks::-webkit-scrollbar-thumb {
+    background: var(--ender-glow);
+    border-radius: 10px;
 }
