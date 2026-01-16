@@ -30,98 +30,57 @@
     </header>
 
     <section class="container">
-       <div class="card-grid store-grid">
-            
-    <div class="card rank-card">
+      <div class="card-grid store-grid">
+    <div class="card rank-card" onclick="openRank('fly-modal')">
         <h3 class="rank-title">FLY</h3>
         <div class="price">$5.00 <span class="lifetime">/ Lifetime</span></div>
-        <ul class="perks">
-            <li><i class="fas fa-check"></i> Custom FLY Prefix</li>
-            <li><i class="fas fa-check"></i> Knight KIT</li>
-            <li><i class="fas fa-check"></i> 5 auctions / 10 Vaults</li>
-            <li><i class="fas fa-check"></i> 4 homes</li>
-            <li><i class="fas fa-check"></i> /Fly & /Flyspeed</li>
-            <li><i class="fas fa-check"></i> /Walkspeed & /speed</li>
-        </ul>
-        <a href="#" class="btn btn-buy">Buy Now</a>
+        <p class="click-info">Click to see all perks</p>
+        <a href="#" class="btn btn-buy" onclick="event.stopPropagation();">Buy Now</a>
     </div>
 
-    <div class="card rank-card">
+    <div class="card rank-card" onclick="openRank('vip-modal')">
         <h3 class="rank-title">VIP</h3>
         <div class="price">$10.00 <span class="lifetime">/ Lifetime</span></div>
-        <ul class="perks">
-            <li><i class="fas fa-check"></i> Custom VIP Prefix</li>
-            <li><i class="fas fa-check"></i> Knight KIT</li>
-            <li><i class="fas fa-check"></i> 10 auctions / 10 Vaults</li>
-            <li><i class="fas fa-check"></i> 5 homes</li>
-            <li><i class="fas fa-check"></i> Size 4 Enderchest</li>
-            <li><i class="fas fa-check"></i> /fly, /jump, /hat</li>
-            <li><i class="fas fa-check"></i> /trash, /pweather</li>
-        </ul>
-        <a href="#" class="btn btn-buy">Buy Now</a>
+        <p class="click-info">Click to see all perks</p>
+        <a href="#" class="btn btn-buy" onclick="event.stopPropagation();">Buy Now</a>
     </div>
 
-    <div class="card rank-card">
+    <div class="card rank-card" onclick="openRank('vipplus-modal')">
         <h3 class="rank-title">VIP+</h3>
         <div class="price">$15.00 <span class="lifetime">/ Lifetime</span></div>
-        <ul class="perks">
-            <li><i class="fas fa-check"></i> Custom VIP+ Prefix</li>
-            <li><i class="fas fa-check"></i> Knight KIT</li>
-            <li><i class="fas fa-check"></i> 15 auctions / 15 Vaults</li>
-            <li><i class="fas fa-check"></i> 6 homes</li>
-            <li><i class="fas fa-check"></i> Size 5 Enderchest</li>
-            <li><i class="fas fa-check"></i> /glow, /top, /firework</li>
-            <li><i class="fas fa-check"></i> + All previous perks</li>
-        </ul>
-        <a href="#" class="btn btn-buy">Buy Now</a>
+        <p class="click-info">Click to see all perks</p>
+        <a href="#" class="btn btn-buy" onclick="event.stopPropagation();">Buy Now</a>
     </div>
 
-    <div class="card rank-card">
+    <div class="card rank-card" onclick="openRank('mvp-modal')">
         <h3 class="rank-title">MVP</h3>
         <div class="price">$25.00 <span class="lifetime">/ Lifetime</span></div>
-        <ul class="perks">
-            <li><i class="fas fa-check"></i> Custom MVP Prefix</li>
-            <li><i class="fas fa-check"></i> Knight KIT</li>
-            <li><i class="fas fa-check"></i> 20 auctions / 20 Vaults</li>
-            <li><i class="fas fa-check"></i> 8 homes</li>
-            <li><i class="fas fa-check"></i> Size 6 Enderchest</li>
-            <li><i class="fas fa-check"></i> /feed, /smithingtable</li>
-            <li><i class="fas fa-check"></i> /grindstone, /loom</li>
-        </ul>
-        <a href="#" class="btn btn-buy">Buy Now</a>
+        <p class="click-info">Click to see all perks</p>
+        <a href="#" class="btn btn-buy" onclick="event.stopPropagation();">Buy Now</a>
     </div>
 
-    <div class="card rank-card featured-rank">
+    <div class="card rank-card featured-rank" onclick="openRank('mvpplus-modal')">
         <div class="best-value">MOST POPULAR</div>
         <h3 class="rank-title">MVP+</h3>
         <div class="price">$40.00 <span class="lifetime">/ Lifetime</span></div>
-        <ul class="perks">
-            <li><i class="fas fa-check"></i> Custom MVP+ Prefix</li>
-            <li><i class="fas fa-check"></i> Champion KIT</li>
-            <li><i class="fas fa-check"></i> 25 auctions / 25 Vaults</li>
-            <li><i class="fas fa-check"></i> 10 homes</li>
-            <li><i class="fas fa-check"></i> Size 6 Enderchest</li>
-            <li><i class="fas fa-check"></i> /near, /extinguish</li>
-            <li><i class="fas fa-check"></i> /ptime, /sign</li>
-        </ul>
-        <a href="#" class="btn btn-buy">Buy Now</a>
+        <p class="click-info">Click to see all perks</p>
+        <a href="#" class="btn btn-buy" onclick="event.stopPropagation();">Buy Now</a>
     </div>
 
-    <div class="card rank-card">
+    <div class="card rank-card" onclick="openRank('mvpplusplus-modal')">
         <h3 class="rank-title">MVP++</h3>
         <div class="price">$60.00 <span class="lifetime">/ Lifetime</span></div>
-        <ul class="perks">
-            <li><i class="fas fa-check"></i> Custom MVP++ Prefix</li>
-            <li><i class="fas fa-check"></i> Champion KIT</li>
-            <li><i class="fas fa-check"></i> UNLIMITED homes/auctions</li>
-            <li><i class="fas fa-check"></i> 50 Vaults</li>
-            <li><i class="fas fa-check"></i> /nick, /repair, /heal</li>
-            <li><i class="fas fa-check"></i> /bottom, /compass</li>
-            <li><i class="fas fa-check"></i> THE ULTIMATE EXPERIENCE</li>
-        </ul>
-        <a href="#" class="btn btn-buy">Buy Now</a>
+        <p class="click-info">Click to see all perks</p>
+        <a href="#" class="btn btn-buy" onclick="event.stopPropagation();">Buy Now</a>
     </div>
+</div>
 
+<div id="rank-modal-overlay" class="modal-overlay" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modal-body">
+            </div>
+    </div>
 </div>
     </section>
 
@@ -134,3 +93,4 @@
 </body>
 
 </html>
+
