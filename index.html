@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SourMC | Competitive Lifesteal & Earth SMP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SOUR<span class="highlight">MC</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="store.html">Store</a></li>
+            <li><a href="#discord">Discord</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>WELCOME TO <span class="ender-text">SOURMC</span></h1>
+            <p class="tagline">Competitive. Fun. Positive Community.</p>
+            <div class="server-status">
+                <span class="badge"><i class="fas fa-check-circle"></i> Premium & Cracked Supported</span>
+            </div>
+            <div class="cta-buttons">
+                <a href="store.html" class="btn btn-primary">Browse Ranks</a>
+                <a href="#discord" class="btn btn-secondary">Join Discord</a>
+            </div>
+            <div class="ip-box" onclick="copyIP()">
+                <span id="ip-text">play.sourmc.net</span>
+                <i class="fas fa-copy"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="container" id="gamemodes">
+        <h2 class="section-title">OUR GAME MODES</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-globe-americas"></i></div>
+                <h3>Earth SMP</h3>
+                <p>Conquer the world on a 1:500 scale Earth map. Build nations, wage wars, and dominate the economy.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-heart"></i></div>
+                <h3>Lifesteal SMP</h3>
+                <p>High stakes PvP. Kill players to steal their hearts. Run out of hearts and you are banned. Are you skilled enough?</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="discord-section" id="discord">
+        <div class="discord-content">
+            <h2>Join the Community</h2>
+            <p>Chat with other players, get support, and participate in giveaways.</p>
+            <iframe src="https://discord.com/widget?id=YOUR_DISCORD_SERVER_ID_HERE&theme=dark" width="350" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 SourMC. Not affiliated with Mojang AB.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

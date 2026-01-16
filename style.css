@@ -1,0 +1,266 @@
+/* --- VARIABLES --- */
+:root {
+    --bg-dark: #0a0a0c;
+    --bg-panel: #16161a;
+    --ender-primary: #9b59b6; /* Lighter Purple */
+    --ender-secondary: #6c2c90; /* Darker Purple */
+    --ender-glow: #d845ff; /* Neon Pink/Purple for highlights */
+    --text-main: #ffffff;
+    --text-muted: #b3b3b3;
+    --font-main: 'Poppins', sans-serif;
+}
+
+/* --- RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* --- NAVBAR --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(10, 10, 12, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(155, 89, 182, 0.2);
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.highlight { color: var(--ender-glow); }
+
+.nav-links { display: flex; gap: 30px; }
+
+.nav-links a {
+    font-weight: 600;
+    transition: 0.3s;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--ender-glow);
+    text-shadow: 0 0 10px rgba(216, 69, 255, 0.5);
+}
+
+/* --- HERO SECTION (Ender Vibe) --- */
+.hero, .store-hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* This creates the Ender Atmosphere without an image */
+    background: radial-gradient(circle at center, #1a0b2e 0%, var(--bg-dark) 70%);
+    position: relative;
+}
+
+.store-hero { height: 50vh; }
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.ender-text {
+    background: linear-gradient(to right, #d845ff, #785af5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #4cd137; /* Green for success */
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+/* --- BUTTONS --- */
+.btn {
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin: 10px;
+}
+
+.btn-primary {
+    background: var(--ender-secondary);
+    border: 1px solid var(--ender-secondary);
+    box-shadow: 0 0 15px rgba(155, 89, 182, 0.4);
+}
+
+.btn-primary:hover, .btn-buy:hover {
+    background: var(--ender-glow);
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(216, 69, 255, 0.6);
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn-secondary:hover {
+    border-color: #fff;
+    background: rgba(255,255,255,0.1);
+}
+
+/* --- IP COPY BOX --- */
+.ip-box {
+    margin-top: 30px;
+    background: rgba(0,0,0,0.5);
+    display: inline-flex;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    cursor: pointer;
+    transition: 0.3s;
+    align-items: center;
+    gap: 10px;
+}
+
+.ip-box:hover { border-color: var(--ender-glow); }
+
+/* --- CARDS & GRID --- */
+.container { padding: 80px 5%; }
+.section-title { text-align: center; margin-bottom: 50px; font-size: 2rem; }
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--bg-panel);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--ender-glow);
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: var(--ender-primary);
+    margin-bottom: 20px;
+}
+
+/* --- STORE SPECIFIC --- */
+.rank-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.rank-title { font-size: 1.8rem; margin-bottom: 10px; }
+.price { font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; color: var(--ender-glow); }
+.lifetime { font-size: 0.9rem; color: var(--text-muted); font-weight: 400; }
+
+.perks {
+    text-align: left;
+    margin-bottom: 30px;
+    flex-grow: 1; /* Pushes button to bottom */
+}
+
+.perks li { margin-bottom: 10px; color: var(--text-muted); }
+.perks li i { color: #4cd137; margin-right: 10px; }
+
+.btn-buy {
+    background: var(--ender-secondary);
+    width: 100%;
+    margin: 0;
+}
+
+.featured-rank {
+    border: 1px solid var(--ender-glow);
+    box-shadow: 0 0 30px rgba(155, 89, 182, 0.1);
+}
+
+.best-value {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--ender-glow);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.referral-note { color: #4cd137; font-size: 0.9rem; }
+
+/* --- DISCORD --- */
+.discord-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: #000;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* --- RESPONSIVE MOBILE --- */
+.menu-toggle { display: none; cursor: pointer; }
+.bar { display: block; width: 25px; height: 3px; background: white; margin: 5px auto; transition: 0.3s; }
+
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: var(--bg-panel);
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        transition: 0.3s;
+    }
+    .nav-links.active { left: 0; }
+    .hero-content h1 { font-size: 2.5rem; }
+}
