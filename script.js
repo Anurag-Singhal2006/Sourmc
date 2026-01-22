@@ -1,86 +1,133 @@
-// --- EXISTING CODE: Mobile Menu Toggle ---
+// === SourMC Website Scripts ===
+
+// --- Mobile Menu Toggle ---
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 
 if (mobileMenu) {
     mobileMenu.addEventListener('click', () => {
         navLinks.classList.toggle('active');
+        // Animate hamburger to X
+        mobileMenu.classList.toggle('active');
     });
 }
 
-// --- EXISTING CODE: Copy IP to Clipboard ---
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        if (mobileMenu) {
+            mobileMenu.classList.remove('active');
+        }
+    });
+});
+
+// --- Navbar Scroll Effect ---
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// --- Copy IP to Clipboard ---
 function copyIP() {
-    const ipText = "play.sourmc.xyz";
+    const ipText = "sourmc.xyz";
     navigator.clipboard.writeText(ipText).then(() => {
         const ipBox = document.querySelector('.ip-box');
-        const originalContent = ipBox.innerHTML;
-        
-        ipBox.innerHTML = '<span style="color:#4cd137">Copied!</span>';
-        
-        setTimeout(() => {
-            ipBox.innerHTML = originalContent;
-        }, 2000);
+        if (ipBox) {
+            const originalContent = ipBox.innerHTML;
+            
+            ipBox.innerHTML = '<span style="color:#4cd137"><i class="fas fa-check"></i> Copied!</span>';
+            
+            setTimeout(() => {
+                ipBox.innerHTML = originalContent;
+            }, 2000);
+        }
     }).catch(err => {
         console.error('Failed to copy: ', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = ipText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        const ipBox = document.querySelector('.ip-box');
+        if (ipBox) {
+            const originalContent = ipBox.innerHTML;
+            ipBox.innerHTML = '<span style="color:#4cd137"><i class="fas fa-check"></i> Copied!</span>';
+            setTimeout(() => {
+                ipBox.innerHTML = originalContent;
+            }, 2000);
+        }
     });
 }
 
-// --- NEW CODE: Rank Data (Details from your file) ---
-const rankData = {
-    'fly-modal': {
-        name: 'FLY',
-        perks: ['Custom FLY Prefix', 'Knight KIT', '5 auctions', '10 Vaults', '4 homes', '/Fly', '/Flyspeed', '/Walkspeed', '/speed']
-    },
-    'vip-modal': {
-        name: 'VIP',
-        perks: ['Custom VIP Prefix', 'Knight KIT', '10 auctions', '10 Vaults', '5 homes', 'Size 4 Enderchest', '/trash', '/pweather', '/hat', '/glow', '/top', '/flyspeed', '/firework', '/jump', '/itemdb', '/fly']
-    },
-    'vipplus-modal': {
-        name: 'VIP+',
-        perks: ['Custom VIP+ Prefix', 'Knight KIT', '15 auctions', '15 Vaults', '6 homes', 'Size 5 Enderchest', '/trash', '/grindstone', '/pweather', '/hat', '/glow', '/top', '/flyspeed', '/firework', '/jump', '/itemdb', '/fly']
-    },
-    'mvp-modal': {
-        name: 'MVP',
-        perks: ['Custom MVP Prefix', 'Knight KIT', '20 auctions', '20 Vaults', '8 homes', 'Size 6 Enderchest', '/trash', '/loom', '/smithingtable', '/cartographytable', '/grindstone', '/feed', '/pweather', '/hat', '/glow', '/top', '/flyspeed', '/firework', '/jump', '/itemdb', '/fly']
-    },
-    'mvpplus-modal': {
-        name: 'MVP+',
-        perks: ['Custom MVP+ Prefix', 'Champion KIT', '25 Vaults', '25 auctions', '10 homes', 'Size 6 Enderchest', '/near', '/trash', '/extinguish', '/loom', '/sign', '/smithingtable', '/cartographytable', '/grindstone', '/feed', '/ptime', '/pweather', '/hat', '/glow', '/top', '/bottom', '/flyspeed', '/firework', '/jump', '/itemdb', '/fly']
-    },
-    'mvpplusplus-modal': {
-        name: 'MVP++',
-        perks: ['Custom MVP++ Prefix', 'Champion KIT', 'No restriction on auctions', 'No restriction on homes', '50 vaults', 'Bigger Enderchests', '/near', '/trash', '/extinguish', '/loom', '/sign', '/smithingtable', '/cartographytable', '/grindstone', '/feed', '/ptime', '/pweather', '/hat', '/glow', '/top', '/bottom', '/heal', '/compass', '/nick', '/realname', '/speed', '/flyspeed', '/repair', '/firework', '/jump', '/itemdb', '/fly']
-    }
+// --- Smooth Scroll for Anchor Links ---
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// --- Add animation on scroll ---
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
 };
 
-// --- NEW CODE: Modal Logic ---
-function openRank(rankId) {
-    const data = rankData[rankId];
-    const modal = document.getElementById('rank-modal-overlay');
-    const body = document.getElementById('modal-body');
-
-    let perksHtml = `<h2 class="ender-text">${data.name}</h2>`;
-    perksHtml += `<ul class="modal-perks-list">`;
-    data.perks.forEach(perk => {
-        perksHtml += `<li><i class="fas fa-check" style="color:var(--ender-glow); margin-right:10px;"></i> ${perk}</li>`;
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+        }
     });
-    perksHtml += `</ul>`;
+}, observerOptions);
 
-    body.innerHTML = perksHtml;
-    modal.style.display = 'flex';
-}
+// Observe elements for animation
+document.querySelectorAll('.category-card, .info-box, .about-card, .feature-item').forEach(el => {
+    observer.observe(el);
+});
 
-function closeModal() {
-    const modal = document.getElementById('rank-modal-overlay');
-    if (modal) {
-        modal.style.display = 'none';
+// --- Add CSS for animations dynamically ---
+const style = document.createElement('style');
+style.textContent = `
+    .category-card, .info-box, .about-card, .feature-item {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
     }
-}
-
-// Close modal if user clicks outside the content box
-window.onclick = function(event) {
-    const modal = document.getElementById('rank-modal-overlay');
-    if (event.target == modal) {
-        closeModal();
+    
+    .category-card.animate-in, 
+    .info-box.animate-in, 
+    .about-card.animate-in,
+    .feature-item.animate-in {
+        opacity: 1;
+        transform: translateY(0);
     }
-}
+    
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+`;
+document.head.appendChild(style);

@@ -3,84 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SourMC | Competitive Lifesteal & Earth SMP</title>
+    <title>SourMC | Official Minecraft Server</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Decorative pixel elements -->
+    <div class="pixel-decorations">
+        <div class="pixel pixel-1"></div>
+        <div class="pixel pixel-2"></div>
+        <div class="pixel pixel-3"></div>
+        <div class="pixel pixel-4"></div>
+        <div class="pixel pixel-5"></div>
+        <div class="pixel pixel-6"></div>
+        <div class="pixel pixel-7"></div>
+        <div class="pixel pixel-8"></div>
+    </div>
 
+    <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">SOUR<span class="highlight">MC</span></div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="store.html">Store</a></li>
-            <li><a href="https://discord.com/api/guilds/1410321838038319210/widget.json">Discord</a></li>
-        </ul>
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/sourmc-logo.png" alt="SourMC Logo" class="logo-img">
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="https://store.sourmc.live" target="_blank">Ranks</a></li>
+                <li><a href="https://store.sourmc.live" target="_blank">Crates</a></li>
+                <li><a href="https://store.sourmc.live" target="_blank">Keys</a></li>
+                <li><a href="https://store.sourmc.live" target="_blank">Perks</a></li>
+                <li><a href="https://discord.gg/pWJgqt3DZe" target="_blank">Support</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="https://store.sourmc.live/checkout" class="cart-btn" target="_blank">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="https://store.sourmc.live/login" class="login-btn" target="_blank">Login</a>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
-            <h1>WELCOME TO <span class="ender-text">SOURMC</span></h1>
-            <p class="tagline">Competitive. Fun. Positive Community.</p>
-            <div class="server-status">
-                <span class="badge"><i class="fas fa-check-circle"></i> Premium & Cracked Supported</span>
+            <div class="hero-logo">
+                <img src="assets/sourmc-logo.png" alt="SourMC" class="main-logo">
             </div>
-            <div class="cta-buttons">
-                <a href="store.html" class="btn btn-primary">Browse Ranks</a>
-                <a href="#discord" class="btn btn-secondary">Join Discord</a>
-            </div>
-            <div class="ip-box" onclick="copyIP()">
-                <span id="ip-text">sourmc.xyz</span>
-                <i class="fas fa-copy"></i>
-            </div>
+            <h2 class="hero-subtitle">Official Store</h2>
+            <a href="https://store.sourmc.live" class="btn btn-primary" target="_blank">SHOP NOW</a>
         </div>
     </header>
 
-    <section class="container" id="gamemodes">
-        <h2 class="section-title">OUR GAME MODES</h2>
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-icon"><i class="fas fa-globe-americas"></i></div>
-                <h3>Earth SMP</h3>
-                <p>Conquer the world on a 1:500 scale Earth map. Build nations, wage wars, and dominate the economy.</p>
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="category-grid">
+            <a href="https://store.sourmc.live/category/ranks" class="category-card" target="_blank">
+                <div class="category-icon">
+                    <img src="assets/sourmc-ranks.png" alt="Ranks">
+                </div>
+                <div class="category-info">
+                    <h3>RANKS</h3>
+                    <span class="view-items-btn">View Items</span>
+                </div>
+            </a>
+
+            <a href="https://store.sourmc.live/category/crates" class="category-card" target="_blank">
+                <div class="category-icon">
+                    <img src="assets/sourmc-crates.png" alt="Crates">
+                </div>
+                <div class="category-info">
+                    <h3>CRATES</h3>
+                    <span class="view-items-btn">View Items</span>
+                </div>
+            </a>
+
+            <a href="https://store.sourmc.live/category/keys" class="category-card" target="_blank">
+                <div class="category-icon">
+                    <img src="assets/sourmc-keys.png" alt="Keys">
+                </div>
+                <div class="category-info">
+                    <h3>KEYS</h3>
+                    <span class="view-items-btn">View Items</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Server Info Section -->
+    <section class="server-info">
+        <div class="info-container">
+            <div class="info-box">
+                <i class="fas fa-gamepad"></i>
+                <h3>Join Our Server</h3>
+                <div class="ip-box" onclick="copyIP()">
+                    <span id="ip-text">sourmc.xyz</span>
+                    <i class="fas fa-copy"></i>
+                </div>
             </div>
-            <div class="card">
-                <div class="card-icon"><i class="fas fa-heart"></i></div>
-                <h3>Lifesteal SMP</h3>
-                <p>Currently Under Development</p>
+            <div class="info-box">
+                <i class="fab fa-discord"></i>
+                <h3>Join Discord</h3>
+                <a href="https://discord.gg/pWJgqt3DZe" class="btn btn-discord" target="_blank">
+                    <i class="fab fa-discord"></i> Discord
+                </a>
             </div>
         </div>
     </section>
 
-    <section class="discord-section" id="discord">
-    <div class="discord-content">
-        <h2>Join the Community</h2>
-        <p>Chat with other players, get support, and participate in giveaways.</p>
-        
-        <iframe src="https://discord.com/widget?id=1410321838038319210&theme=dark" 
-                width="350" 
-                height="400" 
-                allowtransparency="true" 
-                frameborder="0" 
-                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-                style="max-width: 100%; border-radius: 8px;">
-        </iframe>
-    </div>
-</section>
-
-    <footer>
-        <p>&copy; 2026 SourMC. Not affiliated with Mojang AB.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="https://discord.gg/pWJgqt3DZe" target="_blank">Discord</a>
+            <a href="#">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2026 SourMC. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
 
 

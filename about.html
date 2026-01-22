@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | SourMC - Minecraft Server</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Decorative pixel elements -->
+    <div class="pixel-decorations">
+        <div class="pixel pixel-1"></div>
+        <div class="pixel pixel-2"></div>
+        <div class="pixel pixel-3"></div>
+        <div class="pixel pixel-4"></div>
+        <div class="pixel pixel-5"></div>
+        <div class="pixel pixel-6"></div>
+        <div class="pixel pixel-7"></div>
+        <div class="pixel pixel-8"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/sourmc-logo.png" alt="SourMC Logo" class="logo-img">
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="https://store.sourmc.live" target="_blank">Ranks</a></li>
+                <li><a href="https://store.sourmc.live" target="_blank">Crates</a></li>
+                <li><a href="https://store.sourmc.live" target="_blank">Keys</a></li>
+                <li><a href="https://store.sourmc.live" target="_blank">Perks</a></li>
+                <li><a href="https://discord.gg/pWJgqt3DZe" target="_blank">Support</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="https://store.sourmc.live/checkout" class="cart-btn" target="_blank">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="https://store.sourmc.live/login" class="login-btn" target="_blank">Login</a>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <header class="about-hero">
+        <div class="hero-content">
+            <h1>About SourMC</h1>
+            <p>Your ultimate Minecraft gaming experience awaits. Join thousands of players in epic adventures!</p>
+        </div>
+    </header>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="about-container">
+            
+            <!-- What is SourMC -->
+            <div class="about-card">
+                <h2><i class="fas fa-gamepad"></i> What is SourMC?</h2>
+                <p>SourMC is a premium Minecraft server dedicated to providing the best gaming experience for our community. Whether you're a casual player looking for fun or a competitive gamer seeking challenges, we have something for everyone.</p>
+                <p>Our server features custom plugins, unique game modes, and a friendly community that welcomes players from all around the world. We're committed to creating a safe, enjoyable, and exciting environment for all Minecraft enthusiasts.</p>
+            </div>
+
+            <!-- Our Game Modes -->
+            <div class="about-card">
+                <h2><i class="fas fa-layer-group"></i> Our Game Modes</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-globe-americas"></i>
+                        <h3>Earth SMP</h3>
+                        <p>Conquer the world on a 1:500 scale Earth map. Build nations and dominate!</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-heart"></i>
+                        <h3>Lifesteal SMP</h3>
+                        <p>Steal hearts from other players in intense PvP combat.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-treasure-chest"></i>
+                        <h3>Survival</h3>
+                        <p>Classic survival experience with custom enhancements.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-swords"></i>
+                        <h3>PvP Arenas</h3>
+                        <p>Test your combat skills in action-packed arenas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="about-card">
+                <h2><i class="fas fa-star"></i> Why Choose SourMC?</h2>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Premium & Cracked Player Support</li>
+                    <li><i class="fas fa-check-circle"></i> 24/7 Server Uptime with Powerful Hardware</li>
+                    <li><i class="fas fa-check-circle"></i> Active Staff Team & Moderation</li>
+                    <li><i class="fas fa-check-circle"></i> Regular Updates & New Content</li>
+                    <li><i class="fas fa-check-circle"></i> Anti-Cheat Protection</li>
+                    <li><i class="fas fa-check-circle"></i> Active Discord Community</li>
+                    <li><i class="fas fa-check-circle"></i> Custom Plugins & Unique Features</li>
+                    <li><i class="fas fa-check-circle"></i> Fair Gameplay & Economy</li>
+                </ul>
+            </div>
+
+            <!-- Join Us -->
+            <div class="about-card">
+                <h2><i class="fas fa-users"></i> Join Our Community</h2>
+                <p>Ready to start your adventure? Join our server today and become part of the SourMC family! Connect with players, participate in events, and create unforgettable memories.</p>
+                <div style="margin-top: 25px; display: flex; gap: 15px; flex-wrap: wrap;">
+                    <div class="ip-box" onclick="copyIP()">
+                        <span id="ip-text">sourmc.xyz</span>
+                        <i class="fas fa-copy"></i>
+                    </div>
+                    <a href="https://discord.gg/pWJgqt3DZe" class="btn btn-discord" target="_blank">
+                        <i class="fab fa-discord"></i> Join Discord
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="https://discord.gg/pWJgqt3DZe" target="_blank">Discord</a>
+            <a href="#">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2026 SourMC. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
